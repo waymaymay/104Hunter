@@ -12,7 +12,12 @@ html,body{
 }
 
 .banner{
-    background-image: url(./imgs/hiring-concept-with-people-coming-together.jpeg);
+    background-image: url(./imgs/hiring-concept-with-people-coming-together.png);
     width: 100%;
     height: 30%;
+    position:absolute;
+    background-repeat: no-repeat;
+    background-color: #bcc3c9;
+    align-items: center;
+    justify-content: center;
 }
