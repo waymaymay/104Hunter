@@ -48,6 +48,12 @@ async function crawl(numOfJobs){
   const searchBtn= await driver.findElement(By.xpath('/html/body/article[1]/div/div/div[4]/div/button'));
   await searchBtn.click();
 
+  const updateDateElement = await driver.findElement(By.xpath('//div[@class="update"]/span[2]'));
+  const updateDate = await updateDateElement.getText();
+
+  // const searchDate=await driver.findElement(By.xpath('//*[@id="app"]/div/div[1]/div[2]/div/div/div[1]/h1/span/span'));
+  // await searchDate.click();
+
   var resObjs = []; // store many jobs detail // array
   for(let i=1; i<=numOfJobs; i++)
   {
@@ -56,12 +62,13 @@ async function crawl(numOfJobs){
     
     let titleEle = await driver.findElement(By.xpath(xpath));
     let title = await titleEle.getText();
-    resObj["title"] = title
+    resObj["title"] = title;
 
     // use driver navigate to change page or it will remain in the original page
     // need to navigate back or you can store all the link in an array then navigate
     // await titleEle.click(); //enter into jobs detail, use navigate, instead
-    let url = await titleEle.getAttribute("href");    
+    let url = await titleEle.getAttribute("href");   
+    resObj["104url"] = url; 
     driver.navigate().to(url);
 
     await driver.manage().setTimeouts( { implicit: 10000 } );
@@ -77,6 +84,9 @@ async function crawl(numOfJobs){
     let locationEle = await driver.findElement(By.xpath('//*[@id="app"]/div/div[2]/div/div[1]/div[1]/div[2]/div[5]/div[2]/div/div/span[1]'));
     let location= await locationEle.getText();
     resObj["location"]=location;
+
+  
+
 
     /*
     {

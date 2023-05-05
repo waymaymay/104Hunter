@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./main.js"></script>
     <link rel="stylesheet" href="./style.css">
-    <title>104Hunter</title>
+    <link rel="icon" href="./imgs/x-icon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    <script src="./main.js"></script>
+
+    <title>Job Hunter</title>
 </head>
 <body>
-    <script type="module">
+    <!-- <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
@@ -31,12 +36,31 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
-    </script>
+
+        console.log(app);
+    </script> -->
     <div class="container">
         <div class="banner"></div>
         <div class="content">
-            <div class="top">Job Details</div>
-            <div class="job-box"></div>
+            <div class="top">Latest Job Openings</div>
+            <div class="job-groups">
+                <div class="job-box">
+                    <div class="date">4/20</div>
+                    <div class="details">
+                        <div class="sub">
+                            <div class="job-title">職務名稱</div>   
+                        </div>
+                        <div class="more">
+                            <div class="text first">工作性質</div>
+                            <div class="text sec">上班地點</div>
+                            <div class="text thir">學經歷</div>
+                            <div class="text four">薪資</div>
+                            <div class="text five">擅長工具</div> 
+                        </div>              
+                    </div>
+                    <div class="link-btn">more...</div>
+                </div>
+            </div>
         </div>
     </div>
 
