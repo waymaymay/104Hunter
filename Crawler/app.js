@@ -48,11 +48,7 @@ async function crawl(numOfJobs){
   const searchBtn= await driver.findElement(By.xpath('/html/body/article[1]/div/div/div[4]/div/button'));
   await searchBtn.click();
 
-  const updateDateElement = await driver.findElement(By.xpath('//div[@class="update"]/span[2]'));
-  const updateDate = await updateDateElement.getText();
-
-  // const searchDate=await driver.findElement(By.xpath('//*[@id="app"]/div/div[1]/div[2]/div/div/div[1]/h1/span/span'));
-  // await searchDate.click();
+  
 
   var resObjs = []; // store many jobs detail // array
   for(let i=1; i<=numOfJobs; i++)
@@ -85,7 +81,9 @@ async function crawl(numOfJobs){
     let location= await locationEle.getText();
     resObj["location"]=location;
 
-  
+    let updateEle = await driver.findElement(By.xpath('//*[@id="app"]/div/div[1]/div[2]/div/div/div[1]/h1/span/span'));
+    let update= await updateEle.getText();
+    resObj["update"]=update;
 
 
     /*

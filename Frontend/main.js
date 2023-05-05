@@ -20,16 +20,19 @@ ref.get().then(querySnapshot => {
     // 1. build an html element
     var jobBox = `
         <div class="job-box">
-            <div class="date">Date~</div>
+            <div class="date">${data.update}</div>
             <div class="details">
-                <div class="job-title">${data.title}</div>
+                <div class="sub">
+                    <div class="job-title">${data.title}</div>   
+                </div>
                 <div class="more">
                     <div class="text first">${data.seniority}</div>
                     <div class="text sec">${data.salary}</div>
                     <div class="text thir">${data.location}</div>
-                </div>
-            </div>   
-        </div>
+                </div>              
+            </div>
+            <a class="link-btn" href="${data["104url"]}" target="_blank">more</a>
+        
     `;
 
     // 2. insert html
